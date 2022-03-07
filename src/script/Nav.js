@@ -1,11 +1,9 @@
-function Nav() {
+import NavButton from './NavButton';
+function Nav(props) {
   return (
     <nav>
       <ul>
-        <li>Screenshots</li>
-        <li>Photos</li>
-        <li>Videos</li>
-        <li>Memes</li>
+        <NavButton handleNavClick={props.handleNavClick} />
       </ul>
     </nav>
   );

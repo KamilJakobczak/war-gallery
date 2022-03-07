@@ -1,5 +1,4 @@
 import './style/main.scss';
-import Nav from './script/Nav';
 import Gallery from './script/Gallery';
 import Footer from './script/Footer';
 

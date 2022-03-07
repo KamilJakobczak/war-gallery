@@ -1,6 +1,8 @@
 body {
   max-width: 1400px;
+  min-height: 100vh;
   margin: 0 auto;
+  // background-color: $background-color;
   font-style: $base-font, arial;
   font-size: $font-size-normal;
 }
