@@ -39,6 +39,7 @@
     ]
   },
   "devDependencies": {
-    "sass": "^1.49.9"
+    "sass": "^1.49.9",
+    "video-react": "^0.15.0"
   }
 }

@@ -7,7 +7,7 @@
   align-items: center;
   justify-content: space-around;
   div {
-    flex-basis: 40%;
+    // flex-basis: 40%;
     // width: 200px;
     // height: 200px;
 
@@ -15,5 +15,24 @@
       max-width: 100%;
       max-height: 100%;
     }
+  }
+  .screenshots {
+    flex-basis: 30%;
+  }
+  .photos {
+    flex-basis: 35%;
+  }
+  .videos {
+    flex-basis: 34%;
+    margin-top: 15px;
+    // margin-top: 20px;
+
+    .video-react {
+      &-video {
+      }
+    }
+  }
+  .memes {
+    flex-basis: 35%;
   }
 }

@@ -1,19 +1,21 @@
 import React, { Component } from 'react';
 import Nav from './Nav';
 import Media from './Media';
+import categories from '../data/categories.json';
 
 class Gallery extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      activeTab: undefined,
+      activeTab: 'memes',
     };
   }
   handleNavClick(e) {
     // e.preventDefault();
     const id = e.target.id;
+
     this.setState({
-      activeTab: id,
+      activeTab: categories[id],
     });
   }
   render() {

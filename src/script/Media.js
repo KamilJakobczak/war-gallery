@@ -1,15 +1,12 @@
+import Video from './Video';
+import Image from './Image';
+
 function Media(props) {
-  const images = require.context(
-    '../../public/images/memes',
-    false,
-    /\.(png|jpe?g|svg)$/
-  );
-  const displayImages = images.keys().map(images);
-  return displayImages.map((image, id) => (
-    <div key={id}>
-      <img src={image} alt='' />
-    </div>
-  ));
+  if (props.activeTab === 'videos') {
+    return <Video activeTab={props.activeTab} />;
+  } else {
+    return <Image activeTab={props.activeTab} />;
+  }
 }
 
 export default Media;
