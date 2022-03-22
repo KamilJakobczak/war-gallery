@@ -3,8 +3,18 @@
   ul {
     display: flex;
 
-    justify-content: space-between;
     // border: 2px solid black;
+    &.mainNav {
+      justify-content: space-between;
+    }
+    &.secondaryNav {
+      justify-content: space-around;
+      li {
+        button {
+          color: aqua;
+        }
+      }
+    }
     li {
       flex-basis: 22%;
       text-align: center;
