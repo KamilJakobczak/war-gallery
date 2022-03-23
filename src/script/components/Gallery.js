@@ -19,21 +19,41 @@ class Gallery extends Component {
   }
 
   handleNavClick(e) {
-    // e.preventDefault();
+    //ACTIVE BUTTONS
+
+    e.target.classList.toggle('active');
     const id = e.target.id;
+    const secondaryID = e.target.dataset.secondaryid;
+    const secondaryButton = document.querySelector(
+      "button[data-secondaryid='" + this.state.secondaryID + "']"
+    );
     const parentClass = e.target.parentNode.parentNode.className;
+
+    //GALLERY DISPLAY
     if (parentClass === 'secondaryNav') {
+      console.log(this.state.secondaryID);
       this.setState({
-        secondaryID: id,
+        secondaryID,
       });
+      if (this.state.secondaryID !== undefined) {
+        secondaryButton.classList.toggle('active');
+      }
     } else if (parentClass === 'mainNav') {
+      console.log(this.state.secondaryID);
+      document.getElementById(this.state.activeID).classList.remove('active');
+      if (this.state.secondaryID !== undefined) {
+        secondaryButton.classList.toggle('active');
+      }
       this.setState({
         activeID: id,
-        secondaryID: undefined,
+        secondaryID: null,
       });
     }
-    console.log(this.state);
   }
+  componentDidMount() {
+    document.getElementById(this.state.activeID).classList.toggle('active');
+  }
+
   render() {
     return (
       <main className='wrapper'>

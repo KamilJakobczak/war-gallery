@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { Component } from 'react';
 
 function NavButtons(props) {
   return props.buttons.map((button, id) => (

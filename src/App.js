@@ -7,8 +7,8 @@ function App() {
     <div className='App'>
       <header className='header'>
         <h1>
-          personal archive of screenshots, memes and videos from first weeks of
-          russian invasion on ukraine
+          personal archive of screenshots, memes and videos from the first weeks
+          of russian invasion on ukraine
         </h1>
       </header>
       <Gallery />
