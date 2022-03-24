@@ -39,6 +39,7 @@
     ]
   },
   "devDependencies": {
+    "react-infinite-scroller": "^1.2.5",
     "sass": "^1.49.9",
     "video-react": "^0.15.0"
   }

@@ -1,5 +1,9 @@
 function Footer() {
-  return <footer></footer>;
+  return (
+    <footer>
+      <p>&copy;Kamil Jakóbczak 2022</p>
+    </footer>
+  );
 }
 
 export default Footer;

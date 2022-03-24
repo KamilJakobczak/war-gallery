@@ -3,21 +3,32 @@
 
   ul {
     display: flex;
-    button {
-      font-size: $font-size-normal;
-      cursor: pointer;
-      color: $button_font-color;
+    li {
+      line-height: calc($font-size-normal * 2);
+      flex-basis: 23%;
+      text-align: center;
       text-transform: uppercase;
-      text-decoration: none;
-      letter-spacing: 1.5px;
-      font-weight: 600;
-      background: none;
-      border: none;
-      &.active {
-        background-color: $active-background-color;
+
+      button {
+        height: 100%;
+        width: 100%;
+        font-size: $font-size-normal;
+
+        cursor: pointer;
+        color: $button_font-color;
+        text-transform: uppercase;
+        text-decoration: none;
+        letter-spacing: 2px;
+        font-weight: 600;
+        background: none;
+        border: none;
+        &.active {
+          // background-color: $active-background-color;
+          border-bottom: 2px $active-background-color solid;
+          border-radius: 10%;
+        }
       }
     }
-
     // border: 2px solid black;
     &.mainNav {
       justify-content: space-between;
@@ -28,14 +39,6 @@
       li {
         button {
         }
-      }
-    }
-    li {
-      flex-basis: 22%;
-      text-align: center;
-      text-transform: uppercase;
-
-      button {
       }
     }
   }
