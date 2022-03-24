@@ -21,7 +21,6 @@ class Gallery extends Component {
   handleNavClick(e) {
     //ACTIVE BUTTONS
 
-    e.target.classList.toggle('active');
     const id = e.target.id;
     const secondaryID = e.target.dataset.secondaryid;
     const secondaryButton = document.querySelector(
@@ -31,23 +30,35 @@ class Gallery extends Component {
 
     //GALLERY DISPLAY
     if (parentClass === 'secondaryNav') {
-      console.log(this.state.secondaryID);
-      this.setState({
-        secondaryID,
-      });
-      if (this.state.secondaryID !== undefined) {
-        secondaryButton.classList.toggle('active');
+      if (secondaryID === this.state.secondaryID) {
+      } else if (secondaryID !== this.state.secondaryID) {
+        if (this.state.secondaryID !== undefined) {
+          e.target.classList.add('active');
+          secondaryButton.classList.remove('active');
+          this.setState({
+            secondaryID,
+          });
+        } else if (this.state.secondaryID === undefined) {
+          e.target.classList.add('active');
+          this.setState({
+            secondaryID,
+          });
+        }
       }
     } else if (parentClass === 'mainNav') {
-      console.log(this.state.secondaryID);
-      document.getElementById(this.state.activeID).classList.remove('active');
-      if (this.state.secondaryID !== undefined) {
-        secondaryButton.classList.toggle('active');
+      if (id === this.state.activeID) {
+        this.setState({
+          secondaryID: undefined,
+        });
+      } else if (id !== this.state.activeID) {
+        e.target.classList.add('active');
+        document.getElementById(this.state.activeID).classList.remove('active');
+        secondaryButton !== null && secondaryButton.classList.remove('active');
+        this.setState({
+          activeID: id,
+          secondaryID: undefined,
+        });
       }
-      this.setState({
-        activeID: id,
-        secondaryID: null,
-      });
     }
   }
   componentDidMount() {
